@@ -1,0 +1,12 @@
+[submodule ".vim/vundle.git"]
+	path = .vim/vundle.git
+	url = http://github.com/gmarik/vundle.git
+[submodule ".vim/bundle/scrooloose/nerdcommenter.git"]
+	path = .vim/bundle/scrooloose/nerdcommenter.git
+	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule ".vim/bundle/Shougo/vimshell.git"]
+	path = .vim/bundle/Shougo/vimshell.git
+	url = https://github.com/Shougo/vimshell.git
+[submodule ".vim/bundle/Shougo/vimproc.git"]
+	path = .vim/bundle/Shougo/vimproc.git
+	url = https://github.com/Shougo/vimproc.git
