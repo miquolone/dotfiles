@@ -1,7 +1,7 @@
 "vunlde.vimで管理してるpluginを読み込む
 
 filetype off
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/vundle.git/
 call vundle#rc()
 
 " Edit {{{
@@ -36,7 +36,7 @@ call vundle#rc()
   Bundle 'Gundo'
 
   " surround.vim : テキストを括弧で囲む／削除する
-  Bundle 'tpope/surround.vim'
+  Bundle 'tpope/vim-surround'
 
   " smartchr.vim : ==などの前後を整形
   Bundle 'smartchr'
@@ -278,6 +278,6 @@ call vundle#rc()
 
 " }}}
 "
-Bundle 'gmarik/vundle'
+" Bundle 'gmarik/vundle'
 
 filetype plugin indent on
