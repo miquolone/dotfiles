@@ -53,6 +53,9 @@ let g:neocomplcache_snippets_dir = $HOME.'/.vim/snippets'
 imap <C-y> <Plug>(neocomplcache_snippets_expand)
 smap <C-k> <Plug>(neocomplcache_snippets_expand)
 
+" Edit snippet
+noremap es :<C-u>NeoComplCacheEditSnippets<CR>
+
 " 補完を選択しpopupを閉じる
 " inoremap <expr><C-y> neocomplcache#close_popup()
 " 補完をキャンセルしpopupを閉じる

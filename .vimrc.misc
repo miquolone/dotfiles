@@ -3,8 +3,17 @@
 "-------------------------------------------------------------------------------
 
 " ;でコマンド入力( ;と:を入れ替)
-" noremap ; :
+noremap ; :
 " pluginとかでnmap :call hoge..とかやってるやつがあるので、
 " :でもexコマンドに入れるようにしておく
 " noremap : ;
+
+nmap <ESC><ESC> :nohlsearch<CR><ESC>
+
+autocmd BufReadPre *.pdf set ro nowrap
+autocmd BufReadPost *.pdf %!pdftotext "%" -nopgbrk -layout -q -eol unix -
+autocmd BufWritePost *.pdf !rm -rf ~/Desktop/cups-pdf/%
+autocmd BufWritePost *.pdf !lp -s -d CUPS_PDF "%"
+""autocmd BufWritePost *.pdf !until [ -e ~/Desktop/cups-pdf/% ]; do sleep 1;
+""autocmd BufWritePost *.pdf !mv ~/Desktop/cups-pdf/% %:p:h
 

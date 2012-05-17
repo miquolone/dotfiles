@@ -325,6 +325,9 @@ nnoremap <silent> [unite]m  :<C-u>Unite -no-split file_mru<CR>
 " 現在のバッファのカレントディレクトリからファイル一覧
 nnoremap <silent> [unite]d  :<C-u>UniteWithBufferDir -no-split file<CR>
 
+" snippets
+nnoremap <silent> [unite]s  :<C-u>Unite -no-split snippet<CR>
+
 " nnoremap <silent> [unite]b  :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
 
 let g:yankring_zap_keys = ""
@@ -390,3 +393,55 @@ nmap <C-A> <Plug>ToggleN
 vmap <C-A> <Plug>ToggleV
 
 let g:toggle_pairs = { 'and':'or', 'or':'and', 'if':'unless', 'unless':'if', 'yes':'no', 'no':'yes', 'enable':'disable', 'disable':'enable', 'pick':'reword', 'reword':'fixup', 'fixup':'squash', 'squash':'edit', 'edit':'exec', 'exec':'pick' }
+
+
+"------------------------------------
+" vim-powerline
+"------------------------------------
+let g:Powerline_symbols = 'fancy'
+
+"--------------------
+" VimClojure
+" -------------------
+let vimclojure#HighlightBuiltins = 1
+let vimclojure#ParenRainbow = 1
+let vimclojure#FuzzyIndent = 1
+let vimclojure#HighlightContrib = 1
+let vimclojure#DynamicHighlighting = 1
+let g:maplocalleader = ","
+autocmd BufRead,BufNewFile *.clj nmap xyz <Plug>ClojureEvalToplevel
+" Nailgun
+let vimclojure#WantNailgun = 1
+let vimclojure#NailgunClient = "/usr/local/bin/ng"
+let vimclojure#NailgunServer = "127.0.0.1"
+let vimclojure#NailgunPort = "2113"
+
+"------------------------------------
+" Tabular
+"------------------------------------
+if exists(":Tabularize")
+  nmap <Leader>a= :Tabularize /=<CR>
+  vmap <Leader>a= :Tabularize /=<CR>
+  nmap <Leader>a: :Tabularize /:\zs<CR>
+  vmap <Leader>a: :Tabularize /:\zs<CR>
+endif
+
+
+inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+
+function! s:align()
+  let p = '^\s*|\s.*\s|\s*$'
+  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+    Tabularize/|/l1
+    normal! 0
+    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+  endif
+endfunction
+
+"------------------------------------
+" Quickfix
+"------------------------------------
+nnoremap <C-q> :ccl<CR>
+nnoremap <C-Q> :cope<CR>

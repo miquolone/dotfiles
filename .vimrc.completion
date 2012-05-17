@@ -13,6 +13,8 @@ cnoremap <Up>  <C-p>
 cnoremap <C-n> <Down>
 cnoremap <Down>  <C-n>
 
+au FileType javascript set dictionary+=$HOME/.vim/dict/node.dict
+
 " 補完にneocomplcacheを使う
 source ~/dotfiles/.vimrc.completion.neocomplcache
 

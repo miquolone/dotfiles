@@ -1,4 +1,4 @@
-;; (setq load-path (cons "~/dotfiles/.elisp/tuareg" load-path))
+; (setq load-path (cons "~/dotfiles/.elisp/tuareg" load-path))
 ;; (setq load-path (cons "~/dotfiles/.elisp/" load-path))
 
 (setq debug-on-error nil)
@@ -258,3 +258,22 @@
 
 (defadvice bookmark-jump (before bookmark-set-ad activate)
   (bookmark-load bookmark-default-file t t))
+
+(require 'package)
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/"))
+(package-initialize)
+
+(require 'clojure-mode)
+(defun turn-on-paredit () (paredit-mode 1))
+(add-hook 'clojure-mode-hook 'turn-on-paredit)
+
+;;; This was installed by package-install.el.
+;;; This provides support for the package system and
+;;; interfacing with ELPA, the package archive.
+;;; Move this code earlier if you want to reference
+;;; packages in your .emacs.
+;(when
+;    (load
+;     (expand-file-name "~/.emacs.d/elpa/package.el"))
+;  (package-initialize))
