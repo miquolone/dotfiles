@@ -1,0 +1,112 @@
+:set toolbars=nonavigation,nomenu,noaddons,nobookmarks
+map sM :set toolbars=navigation,menu<CR>
+map hM :set toolbars=nonavigation,nomenu<CR>
+
+" options -------------------------------------------------------
+set runtimepath=/Users/tomokane/.vimperator
+
+" tabを押さなくても補完する
+set autocomplete
+
+" twitterとか開いたときにinput要素にfocusを奪われないようにする
+set focuscontent
+
+" 補完リストはサーチエンジンとロケーションバーの履歴の順番
+set complete=sl
+
+set ignorecase
+
+set titlestring=Firefox
+"set guioptions=mTb
+set hlsearch
+set verbose=9
+set visualbell
+
+set hintchars=abcdefghijklmnopqrstuvwxyz
+
+"Google検索
+map ,g :open<space>google<space>
+map s :tabopen<space>google<space>
+
+"ヴィジュアルモードで選択した文字列を新しいタブでGoogle検索
+vmap <silent> G y<Esc><Esc>:os<space>google<space><M-v>
+
+"⇧shift+;のテキストズームを無効化
+map + <Nop>
+
+"ソースを表示するキーを無効化
+map gf <Nop>
+
+"ヴィジュアルモードでもカーソル上下移動をj,kで
+vnoremap j <Down>
+vnoremap k <Up>
+
+map j 3<C-d>
+map k 3<C-u>
+map J <C-e>
+map K <C-y>
+
+map <BS> <A-Left>
+
+noremap h 3h
+noremap l 3l
+map H <A-Left>
+map L <A-Right>
+
+"<C-r>で設定を再読み込み
+map <C-r> :source ~/.vimperatorrc<CR>
+
+noremap x d
+
+"Gmail と Google Reader で使用するキーを設定
+autocmd LocationChange .* :fmapc
+autocmd LocationChange 'mail\.google\.com/mail' :fmap c / j k n p o u e x s r a y # [ ] z ? gi gs gt gd ga gc
+autocmd LocationChange 'www\.google\.com/reader' :fmap! -vkey j k n p m s v A r S N P X O gh ga gs gt gu / ?
+autocmd LocationChange 'www\.google\.co\.jp/reader' :fmap! -vkey j k n p m s v A r S N P X O gh ga gs gt gu / ?
+
+"ダウンロードウィンドウを完了後自動で閉じる
+set! browser.download.manager.closeWhenDone=true
+"ダウンロード履歴をFirefox終了時に削除
+set! browser.download.manager.retention=1
+
+""キャッシュをHDDからRAMに
+"set! browser.cache.disk.enable=false
+"set! browser.cache.memory.enable=true
+"" 単位(KB)
+"set! browser.cache.memory.capacity=-1
+
+"アドオンインストール時の待ち時間カット
+set! security.dialog_enable_delay=0
+
+"ページのアクセスキー無効化
+set! ui.key.generalAccessKey=0
+
+"JavaScriptでのウィンドウ移動・リサイズ拒否
+set! dom.disable_window_move_resize=true
+
+"JavaScriptのステータスバー操作を無効化
+set! dom.event.contextmenu.enabled=false
+
+
+"リンクURLをステータスラインに表示
+"set showstatuslinks=1
+
+".vimperatorrc読み終わりのメッセージ
+echo "vimperator: Welcome back"
+
+"アピアランス
+
+"カラースキーム
+colorscheme RedNS
+
+"キャレットの表示スタイル
+set! ui.caretWidth=8
+
+"ヒントのスタイル指定
+highlight Hint z-index:9999; font-family:Menlo; font-size:10px; color:white; background-color:rgba(0, 0, 0, 0.8); border-radius:3px; box-shadow:3px 3px 10px #000; border-color:rgba(255, 255, 255, 0.8); border-width:1px; border-style:solid; padding:1px 2px 1px 4px; position:absolute; letter-spacing:2px;
+
+"リンクの色 (set linkbgcolor=aqua)
+highlight HintElem background:url(file:///Users/tomokane/.vimperator/colors/stripe.png) repeat;
+
+"アクティブなリンクの色 (set activelinkbgcolor=lightblue)
+highlight HintActive background:lightblue;
