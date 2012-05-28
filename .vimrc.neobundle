@@ -287,4 +287,7 @@ call neobundle#rc(expand('~/dotfiles/.vim/bundle'))
   NeoBundle 'manalang/jshint.vim'
   NeoBundle 'pangloss/vim-javascript'
 
+  "vimperatorrc
+  NeoBundle 'superbrothers/vim-vimperator'
+
 filetype plugin indent on
