@@ -56,7 +56,9 @@ map hM :set toolbars=nonavigation,nomenu<CR>
 
 "Google検索
 map ,g :open<space>google<space>
-map s :tabopen<space>google<space>
+
+nnoremap s :nicopause<CR>
+nnoremap S :nicosize<CR>
 
 "ヴィジュアルモードで選択した文字列を新しいタブでGoogle検索
 vmap <silent> G y<Esc><Esc>:tabopen<space>google<space><M-v>
@@ -71,17 +73,22 @@ map gf <Nop>
 vnoremap j <Down>
 vnoremap k <Up>
 
-nnoremap j 3<C-d>
-nnoremap k 3<C-u>
-nnoremap J <space>
-nnoremap K <S-space>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+
+nnoremap j 3j
+nnoremap k 3k
+nnoremap <C-d> <space>
+nnoremap <C-u> <S-space>
+"nnoremap J <space>
+"nnoremap K <S-space>
 
 nnoremap <BS> <A-Left>
 
-nnoremap h 3h
-nnoremap l 3l
-nnoremap H <A-Left>
-nnoremap L <A-Right>
+"nnoremap h 3h
+"nnoremap l 3l
+"nnoremap H <A-Left>
+"nnoremap L <A-Right>
 
 "<C-r>で設定を再読み込み
 map <C-r> :source ~/.vimperatorrc<CR>
@@ -92,8 +99,9 @@ nnoremap d ;f<CR>
 "Gmail と Google Reader で使用するキーを設定
 autocmd LocationChange .* :fmapc
 autocmd LocationChange 'mail\.google\.com/mail' :fmap c / j k n p o u e x s r a y # [ ] z ? gi gs gt gd ga gc
-autocmd LocationChange 'www\.google\.com/reader' :fmap! -vkey j k n p m s v A r S N P X O gh ga gs gt gu / ?
-autocmd LocationChange 'www\.google\.co\.jp/reader' :fmap! -vkey j k n p m s v A r S N P X O gh ga gs gt gu / ?
+autocmd LocationChange 'www\.google\.com/reader' :fmap! -vkey j k n p m s v A r S N P X O gh ga gs gt gu <C-d> <C-u> <space> / ?
+autocmd LocationChange 'www\.google\.co\.jp/reader' :fmap! -vkey j k n p m s v A r S N P X O gh ga gs gt gu <C-d> <C-u> <space> / ?
+autocmd LocationChange 'docs\.google\.com' :fmap! -vkey j k n p m s v A r S N P X O gh ga gs gt gu <C-d> <C-u> <space> / ?
 
 "アピアランス
 

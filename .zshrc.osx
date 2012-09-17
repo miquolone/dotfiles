@@ -45,8 +45,8 @@ export CLASSPATH=$CLASSPATH:/usr/local/Cellar/clojure-contrib/1.2.0/clojure-cont
 # export PATH=$ANT_HOME/bin:$PATH
 
 # Maven2
-export MAVEN_VERSION=2.2.1
-export MAVEN_HOME=~/dev/Tools/apache-maven-${MAVEN_VERSION}
+export MAVEN_VERSION=3.0.4
+export MAVEN_HOME=/usr/local/Cellar/maven/3.0.4/libexec
 export PATH=$MAVEN_HOME/bin:$PATH
 export MAVEN_OPTS=-Xmx1024M
 
@@ -66,6 +66,10 @@ export INFOPATH
 export MYSQL_HOME=/usr/local/mysql
 export PATH=$MYSQL_HOME/bin:$PATH
 alias h2db='java -cp ~/.m2/repository/com/h2database/h2/1.1.112/h2-1.1.112.jar org.h2.tools.Server'
+
+# Postgresql
+alias pg_start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+alias pg_stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
 # STAX SDK
 # export STAX_HOME=~/dev/Project/sandbox/stax-sdk-0.2.11
@@ -94,7 +98,8 @@ export PATH=$PATH:$GAEGo_SDK_INSTALLED_DIR/google_appengine
 alias dev_go='~/sandbox/go/google_appengine/dev_appserver.py'
 
 # Android SDK
-export PATH=$PATH:~/sandbox/android-sdk-macosx/tools
+export PATH=$PATH:~/sandbox/android-sdk-macosx/tools:~/sandbox/android-sdk-macosx/platform-tools
+export ANDROID_HOME=~/sandbox/android-sdk-macosx/tools
 
 # Perl
 alias perl='/usr/bin/perl'

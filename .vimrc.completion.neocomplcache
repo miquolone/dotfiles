@@ -40,6 +40,10 @@ let g:neocomplcache_dictionary_filetype_lists = {
     \ 'vm' : $HOME.'/.vim/dict/vim.dict'
     \ }
 
+let g:neocomplcache_ctags_arguments_list = {
+  \ 'perl' : '-R -h ".pm"'
+  \ }
+
 " Define keyword.
 if !exists('g:neocomplcache_keyword_patterns')
     let g:neocomplcache_keyword_patterns = {}

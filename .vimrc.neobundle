@@ -146,6 +146,10 @@ call neobundle#rc(expand('~/dotfiles/.vim/bundle'))
   " vim-ruby : VimでRubyを扱う際の最も基本的な拡張機能
   NeoBundle 'ruby.vim'
 
+  " perl
+  NeoBundle 'petdance/vim-perl'
+  NeoBundle 'hotchpotch/perldoc-vim'
+
   " rails.vim : rails的なアレ
   NeoBundle 'tpope/vim-rails'
 
@@ -286,6 +290,7 @@ call neobundle#rc(expand('~/dotfiles/.vim/bundle'))
   NeoBundle 'wavded/vim-stylus'
   NeoBundle 'manalang/jshint.vim'
   NeoBundle 'pangloss/vim-javascript'
+  NeoBundle 'groenewege/vim-less'
 
   "vimperatorrc
   NeoBundle 'superbrothers/vim-vimperator'

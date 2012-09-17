@@ -661,3 +661,5 @@ esac
 ## local固有設定
 #
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
