@@ -7,6 +7,8 @@ alias emacs='/usr/local/bin/emacs'
 alias ctags='/usr/local/Cellar/ctags/5.8/bin/ctags'
 alias redis-server='redis-server /usr/local/etc/redis.conf'
 alias css2stylus='stylus -C'
+alias nw="/Applications/node-webkit.app/Contents/MacOS/node-webkit"
+
 
 # Terminal Colorの設定
 export CLICOLOR=1
@@ -102,7 +104,8 @@ export PATH=$PATH:~/sandbox/android-sdk-macosx/tools:~/sandbox/android-sdk-macos
 export ANDROID_HOME=~/sandbox/android-sdk-macosx/tools
 
 # Perl
-alias perl='/usr/bin/perl'
+# alias perl='/usr/bin/perl'
+source ~/perl5/perlbrew/etc/bashrc
 
 # Python
 # alias python='/usr/local/bin/python'
@@ -163,4 +166,6 @@ alias tm='tmuxx'
 alias tma='tmux attach'
 alias tml='tmux list-window'
 
-# neon
+# Sencha touch
+export PATH=/Applications/SenchaSDKTools-2.0.0-beta3:$PATH
+export SENCHA_SDK_TOOLS_2_0_0_BETA3=/Applications/SenchaSDKTools-2.0.0-beta3
