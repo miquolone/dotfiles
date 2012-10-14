@@ -20,6 +20,9 @@ call neobundle#rc(expand('~/dotfiles/.vim/bundle'))
   " XMLとかHTMLとかの編集機能を強化する
   NeoBundle 'xmledit'
 
+  " html5の追加タグ
+  NeoBundle ' three/html5.vim'
+
   " Align : 高機能整形・桁揃えプラグイン
   NeoBundle 'Align'
 
