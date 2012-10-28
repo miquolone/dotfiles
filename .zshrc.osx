@@ -119,7 +119,8 @@ source ~/perl5/perlbrew/etc/bashrc
 
 
 # Ruby
-if [[ -s /Users/tomokane/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
+# if [[ -s /Users/tomokane/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
+export PATH=$PATH:~/.rvm/bin
 
 export REFE_DATA_DIR=/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/share/refe
 
@@ -134,7 +135,7 @@ export PATH=$PATH:$GOROOT/bin
 # export PATH=/usr/local/share/npm/bin:$PATH
 setopt no_nomatch
 source ~/.nvm/nvm.sh
-nvm use v0.7.8
+# nvm use v0.8.9
 
 # JRuby
 export JRUBY_HOME=$HOME/sandbox/jruby/jruby-1.5.2
@@ -169,3 +170,7 @@ alias tml='tmux list-window'
 # Sencha touch
 export PATH=/Applications/SenchaSDKTools-2.0.0-beta3:$PATH
 export SENCHA_SDK_TOOLS_2_0_0_BETA3=/Applications/SenchaSDKTools-2.0.0-beta3
+
+# gitolite
+export GITOLITE_HTTP_HOME=~/gitolite-home
+

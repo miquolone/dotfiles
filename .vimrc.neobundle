@@ -94,7 +94,8 @@ call neobundle#rc(expand('~/dotfiles/.vim/bundle'))
   NeoBundle 'Shougo/neocomplcache'
 
   " neocomplcacheのsinpet補完
-  NeoBundle 'Shougo/neocomplcache-snippets-complete'
+  "NeoBundle 'Shougo/neocomplcache-snippets-complete'
+  NeoBundle 'Shougo/neosnippet'
 
   " rubyでrequire先を補完する
   " NeoBundle 'ujihisa/neco-ruby'
@@ -291,6 +292,9 @@ call neobundle#rc(expand('~/dotfiles/.vim/bundle'))
   " NeoBundle 'manalang/jshint.vim'
   NeoBundle 'pangloss/vim-javascript'
   NeoBundle 'groenewege/vim-less'
+
+  " fuzzy Searching
+  NeoBundle 'kien/ctrlp.vim'
 
   "vimperatorrc
   NeoBundle 'superbrothers/vim-vimperator'

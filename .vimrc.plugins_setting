@@ -315,7 +315,7 @@ nnoremap [unite]u  :<C-u>Unite -no-split<Space>
 " 全部乗せ
 nnoremap <silent> [unite]a  :<C-u>UniteWithCurrentDir -no-split -buffer-name=files buffer file_mru bookmark file<CR>
 " ファイル一覧
-nnoremap <silent> [unite]f  :<C-u>Unite -no-split -buffer-name=files file<CR>
+" nnoremap <silent> [unite]f  :<C-u>Unite -no-split -buffer-name=files file<CR>
 " バッファ一覧
 nnoremap <silent> [unite]b  :<C-u>Unite -no-split buffer<CR>
 " 常用セット
@@ -367,6 +367,13 @@ let g:unite_source_file_mru_limit = 200
 " unite-plugins
 cnoremap UH Unite help<Enter>
 cnoremap UO Unite outline<Enter>
+
+
+"------------------------------------
+" ctrlp.vim
+"------------------------------------
+nnoremap <silent> ff  :CtrlPMixed<CR>
+
 
 "------------------------------------
 " quickrun.vim
