@@ -8,7 +8,7 @@ alias ctags='/usr/local/Cellar/ctags/5.8/bin/ctags'
 alias redis-server='redis-server /usr/local/etc/redis.conf'
 alias css2stylus='stylus -C'
 alias nw="/Applications/node-webkit.app/Contents/MacOS/node-webkit"
-
+alias diff="/usr/local/bin/colordiff"
 
 # Terminal Colorの設定
 export CLICOLOR=1
@@ -174,3 +174,8 @@ export SENCHA_SDK_TOOLS_2_0_0_BETA3=/Applications/SenchaSDKTools-2.0.0-beta3
 # gitolite
 export GITOLITE_HTTP_HOME=~/gitolite-home
 
+# z
+. `brew --prefix`/etc/profile.d/z.sh
+function precmd () {
+   z --add "$(pwd -P)"
+}

@@ -1,6 +1,6 @@
 [user]
-	name = Akihiko Tomokane
-	email = tomokane@allianceport.jp
+  name = Akihiko Tomokane
+  email = mpc9000@gmail.com
 [color]
   # colorの設定(以下のコマンドは自動で色つける)
   status = auto
@@ -142,4 +142,4 @@
   generic = ^F move-page-down
   generic = ^B move-page-up
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain

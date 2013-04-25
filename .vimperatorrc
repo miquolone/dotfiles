@@ -11,7 +11,7 @@ set focuscontent
 set complete=sl
 
 set ignorecase
-set titlestring=Firefox
+"set titlestring=Firefox
 "set guioptions=mTb
 set hlsearch
 set verbose=9
@@ -53,6 +53,7 @@ set hintchars=abcdefghijklmnopqrstuvwxyz
 
 map sM :set toolbars=navigation,menu<CR>
 map hM :set toolbars=nonavigation,nomenu<CR>
+map y :copyurl<CR>
 
 "Google検索
 map ,g :open<space>google<space>
